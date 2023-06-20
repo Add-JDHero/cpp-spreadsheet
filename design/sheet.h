@@ -26,11 +26,11 @@ public:
     void PrintValues(std::ostream& output) const override;
     void PrintTexts(std::ostream& output) const override;
 private:
-	std::unordered_map<Position, std::unique_ptr<CellInterface>, position_hash> data_;
+    unordered_map<Position, std::unique_ptr<CellInterface>, position_hash> data_;
 	
-	// Возвращает координаты левого верхнего и правого нижнего углов
-	std::pair<Position, Position> Sheet::GetLeftRightCorners() const;
+    // Возвращает координаты левого верхнего и правого нижнего углов
+    std::pair<Position, Position> Sheet::GetLeftRightCorners() const;
 	
-	// Проверяет на циклическую зависимость ячеек
-	bool CheckCircularDependency(const CellInterface* cell, Position this_pos) const;
+
+    bool CheckCircularDependency(const CellInterface* cell, Position this_pos) const;
 };
